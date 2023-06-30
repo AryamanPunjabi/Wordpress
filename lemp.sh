@@ -1,5 +1,4 @@
 #!/bin/bash
-
 COMPOSE_FILE="myfile.yml"
 SITE_NAME="$2"
 
@@ -13,7 +12,6 @@ function start_site() {
     echo "Failed"
   fi
 }
-
 function stop_site() {
   echo "Stopping the $SITE_NAME ......................"
   docker-compose -f $COMPOSE_FILE stop
@@ -23,7 +21,6 @@ function stop_site() {
     echo "Failed"
   fi
 }
-
 function delete_site() {
   echo "Deleting the $SITE_NAME ..................."
   docker-compose -f $COMPOSE_FILE down -v
@@ -33,9 +30,6 @@ function delete_site() {
     echo "Failed"
   fi
 }
-
-
-
 case "$1" in
   start )
     start_site
