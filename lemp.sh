@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMPOSE_FILE="myfile.yml"
-WEBSITE_NAME="$2"
+SITE_NAME="$2"
 
 function start_site() {
   echo "launching $SITE_NAME ......................."
