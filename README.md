@@ -12,7 +12,11 @@ Steps :
 5. Now run the docker-compose file,providing name as command-line argument
 
    ![image](https://github.com/ARYAMANPUNJABI/Wordpress/assets/76035847/253be314-54f7-427e-9e26-c56f235679fc)
-6. To prompt user to open example.com create bash filename as Lemp.sh
-7. Now run Lemp.sh and run the following command.
+6. After running docker-compose file check containers is running or not
+   command : docker ps -a
+   ![image](https://github.com/ARYAMANPUNJABI/Wordpress/assets/76035847/1acba5e2-b1c8-42f9-b6e0-082dc32ae771)
+
+8. To prompt user to open example.com create bash filename as Lemp.sh
+9. Now run Lemp.sh and run the following command.
 
    ![image](https://github.com/ARYAMANPUNJABI/Wordpress/assets/76035847/355100ac-aaec-45ac-8405-3b755b888dc8)
