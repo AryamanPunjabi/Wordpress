@@ -7,6 +7,7 @@ function start_site() {
   docker-compose -f $COMPOSE_FILE  up -d
   if [[ $? -eq 0 ]]; then
     echo "The $SITE_NAME has been started."
+    Open http://example.com in a browser to access your site.
     prompt_open_site
   else
     echo "Failed"
