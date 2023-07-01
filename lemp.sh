@@ -1,12 +1,12 @@
 #!/bin/bash
 COMPOSE_FILE="myfile.yml"
-WEBSITESITE_NAME="$2"
+WEBSITE_NAME="$2"
 
 function start_site() {
-  echo "launching $SITE_NAME ......................."
+  echo "launching $WEBSITE_NAME ......................."
   docker-compose -f $COMPOSE_FILE  up -d
   if [[ $? -eq 0 ]]; then
-    echo "The $SITE_NAME has been started."
+    echo "The $WEBSITE_NAME has been started."
     Open http://example.com in a browser to access your site.
     prompt_open_site
   else
@@ -14,19 +14,19 @@ function start_site() {
   fi
 }
 function stop_site() {
-  echo "Stopping the $SITE_NAME ......................"
+  echo "Stopping the $WEBSITE_NAME ......................"
   docker-compose -f $COMPOSE_FILE stop
   if [[ $? -eq 0 ]]; then
-    echo "The $SITE_NAME site has been stopped."
+    echo "The $WEBSITE_NAME site has been stopped."
   else
     echo "Failed"
   fi
 }
 function delete_site() {
-  echo "Deleting the $SITE_NAME ..................."
+  echo "Deleting the $WEBSITE_NAME ..................."
   docker-compose -f $COMPOSE_FILE down -v
   if [[ $? -eq 0 ]]; then
-    echo "The $SITE_NAME site has been deleted."
+    echo "The $WEBSITE_NAME site has been deleted."
   else
     echo "Failed"
   fi
