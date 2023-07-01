@@ -1,18 +1,27 @@
 #!/bin/bash
 COMPOSE_FILE="myfile.yml"
-WEBSITE_NAME="$2"
+SITE_NAME="$2"
 
 function start_site() {
-  echo "launching $WEBSITE_NAME ......................."
-  docker-compose -f $COMPOSE_FILE  up -d
+  if [[ -z $SITE_NAME ]]; then
+    echo "Please provide a site name."
+    exit 1
+  fi
+
+  echo "Launching $SITE_NAME..."
+  docker-compose -f $COMPOSE_FILE up -d
+
   if [[ $? -eq 0 ]]; then
-    echo "The $WEBSITE_NAME has been started."
-    Open http://example.com in a browser to access your site.
-    prompt_open_site
+    echo "127.0.0.1 $SITE_NAME" | sudo tee -a /etc/hosts
+
+    echo "The $SITE_NAME has been started."
+    echo "WordPress site created successfully."
+    echo "Please open http://$SITE_NAME in your browser."
   else
-    echo "Failed"
+    echo "Failed to start the site."
   fi
 }
+
 function stop_site() {
   echo "Stopping the $WEBSITE_NAME ......................"
   docker-compose -f $COMPOSE_FILE stop
@@ -42,7 +51,6 @@ case "$1" in
     delete_site
     ;;
   * )
-    echo "Usage: $0 [start|stop|delete] <site_name>"
     ;;
 esac
 
