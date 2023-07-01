@@ -23,19 +23,19 @@ function start_site() {
 }
 
 function stop_site() {
-  echo "Stopping the $WEBSITE_NAME ......................"
+  echo "Stopping the $SITE_NAME ......................"
   docker-compose -f $COMPOSE_FILE stop
   if [[ $? -eq 0 ]]; then
-    echo "The $WEBSITE_NAME site has been stopped."
+    echo "The $SITE_NAME site has been stopped."
   else
     echo "Failed"
   fi
 }
 function delete_site() {
-  echo "Deleting the $WEBSITE_NAME ..................."
+  echo "Deleting the $SITE_NAME ..................."
   docker-compose -f $COMPOSE_FILE down -v
   if [[ $? -eq 0 ]]; then
-    echo "The $WEBSITE_NAME site has been deleted."
+    echo "The $SITE_NAME site has been deleted."
   else
     echo "Failed"
   fi
