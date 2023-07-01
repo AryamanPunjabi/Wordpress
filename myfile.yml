@@ -19,6 +19,7 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: password@123
+      MYSQL_DATABASE: wordpress
     volumes:
       - ./mysql/data:/var/lib/mysql
 
